@@ -163,6 +163,7 @@ void GamepadConfiguration::OnChoiceChange(wxCommandEvent& event)
 	if (id != wxNOT_FOUND)
 	{
 		g_conf.set_joy_uid(m_pad_id, Device::index_to_uid(id));
+		m_pad_id = id;
 	}
 }
 
@@ -179,8 +180,10 @@ void GamepadConfiguration::repopulate()
 	m_sl_joystick_sensibility->SetValue(g_conf.get_sensibility());
 
 	u32 joyid = Device::uid_to_index(m_pad_id);
-	if (joyid < m_joy_map->GetCount() && !m_joy_map->IsEmpty())
+	if (joyid < m_joy_map->GetCount() && !m_joy_map->IsEmpty()) {
 		m_joy_map->SetSelection(joyid);
+		m_pad_id = joyid;
+	}
 
 	// enable rumble intensity slider if the checkbox is checked
 	m_sl_rumble_intensity->Enable(m_cb_rumble->GetValue());
