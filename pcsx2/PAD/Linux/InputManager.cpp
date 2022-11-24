@@ -75,7 +75,7 @@ void InputDeviceManager::Update()
 void EnumerateDevices()
 {
 #ifdef SDL_BUILD
-	JoystickInfo::EnumerateJoysticks(device_manager.devices);
+	//JoystickInfo::EnumerateJoysticks(device_manager.devices);
 #endif
 	EnumerateDualShock3s(device_manager.devices);
 }
