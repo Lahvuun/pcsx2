@@ -21,6 +21,7 @@
 #ifdef SDL_BUILD
 #include "SDL/joystick.h"
 #endif
+#include "DualShock3.h"
 
 InputDeviceManager device_manager;
 
@@ -76,4 +77,5 @@ void EnumerateDevices()
 #ifdef SDL_BUILD
 	JoystickInfo::EnumerateJoysticks(device_manager.devices);
 #endif
+	EnumerateDualShock3s(device_manager.devices);
 }
