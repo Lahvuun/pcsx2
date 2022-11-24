@@ -600,6 +600,7 @@ else()
 		PAD/Linux/Device.cpp
 		PAD/Linux/InputManager.cpp
 		PAD/Linux/SDL/joystick.cpp
+		PAD/Linux/DualShock3.cpp
 		PAD/Linux/keyboard.cpp
 		PAD/Linux/KeyStatus.cpp
 		PAD/Linux/PAD.cpp
